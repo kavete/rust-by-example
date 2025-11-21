@@ -1,3 +1,6 @@
+#![allow(unused)]
+
+use std::fmt;
 fn main() {
     println!("Hello, world!");
     println!("I'm a Rustacean");
@@ -63,4 +66,13 @@ fn main() {
 
     // Printing with {:?}
     println!("Months is a year {:?}", 12);
+
+    // Implementing Display
+    struct SomeStructure(i32);
+
+    impl fmt::Display for Structure {
+        fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
+            write!(f, "{}", self.0)
+        }
+    }
 }
